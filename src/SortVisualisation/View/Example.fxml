@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.Pane?>
+<?import java.net.URL?>
+<Pane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SortVisualisation.Controller.MainController">
+    <stylesheets>
+        <URL value="@Super.css" />
+    </stylesheets>
+
+    <TabPane fx:id="tabPane" minHeight="500.0" side="TOP" minWidth="1000.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="25.0" tabMinWidth="100.0" stylesheets="@tabStyle.css">
+    </TabPane>
+</Pane>

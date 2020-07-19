@@ -1,0 +1,115 @@
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<Tab text="HeapSort" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
+     fx:controller="SortVisualisation.Controller.HeapSortController">
+    <VBox>
+        <BarChart fx:id="barChart"
+                  animated="false"
+                  legendVisible="false"
+                  barGap="3"
+                  categoryGap="0"
+                  title="HeapSort Data">
+            <yAxis>
+                <NumberAxis label="Values"
+                            side="LEFT"/>
+            </yAxis>
+            <xAxis>
+                <CategoryAxis label="Indices"
+                              side="BOTTOM"/>
+            </xAxis>
+        </BarChart>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" VBox.vgrow="ALWAYS">
+            <Button
+                    disable="true"
+                    layoutX="10.0"
+                    layoutY="10.0"
+                    mnemonicParsing="false"
+                    text="Step"
+                    fx:id="btnOneStep"
+                    onAction="#visualiseOneSortingStep">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+            <Button
+                    disable="true"
+                    mnemonicParsing="false"
+                    text="Start"
+                    fx:id="btnStartPause"
+                    onAction="#startOrPauseSorting">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+            <Label text="Delay steps in ms:">
+                <HBox.margin>
+                    <Insets left="15.0" />
+                </HBox.margin>
+            </Label>
+            <Slider prefWidth="200.0"
+                    showTickMarks="true"
+                    min="10"
+                    max="1000"
+                    value="100"
+                    showTickLabels="true"
+                    blockIncrement="250"
+                    fx:id="sldrDelay"
+                    onMouseClicked="#updateDelayField"
+                    onKeyReleased="#updateDelayField"
+                    majorTickUnit="500"
+                    minorTickCount="10">
+                <HBox.margin>
+                    <Insets left="10.0" />
+                </HBox.margin>
+            </Slider>
+            <TextField text="100"
+                       onKeyReleased="#updateDelaySlider"
+                       fx:id="fldDelay"
+                       prefWidth="60.0">
+                <HBox.margin>
+                    <Insets left="12.0" bottom="15.0" />
+                </HBox.margin>
+            </TextField>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label
+                    layoutX="100.0"
+                    layoutY="100.0"
+                    text="Number of bars:">
+                <HBox.margin>
+                    <Insets right="15.0" />
+                </HBox.margin>
+            </Label>
+            <TextField prefWidth="70.0"
+                       promptText="0-300"
+                       fx:id="fldInput"/>
+            <Button
+                    layoutX="10.0"
+                    layoutY="10.0"
+                    mnemonicParsing="false"
+                    text="Generate"
+                    fx:id="btnInput"
+                    onAction="#visualiseInput">
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+            <padding>
+                <Insets left="48.0"/>
+            </padding>
+        </HBox>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        </padding>
+    </VBox>
+</Tab>
