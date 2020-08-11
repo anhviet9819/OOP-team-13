@@ -47,6 +47,7 @@
 .tab-border
 {
     -fx-outline:none;
+    -fx-background-color: blue;
 }
 
 /*.tab-pane:left *.tab-header-area*/
